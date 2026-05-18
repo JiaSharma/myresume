@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jia Sharma | Futuristic Resume</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #060816;
+      --card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+      --text: #ffffff;
+      --muted: #b7bdd1;
+      --violet: #a855f7;
+      --blue: #3b82f6;
+      --cyan: #22d3ee;
+      --pink: #ec4899;
+      --glow: 0 0 40px rgba(168,85,247,0.35);
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(168,85,247,0.25), transparent 25%),
+        radial-gradient(circle at bottom left, rgba(59,130,246,0.25), transparent 25%),
+        radial-gradient(circle at center, rgba(34,211,238,0.08), transparent 40%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(70px);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 50px 24px;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    }
+
+    .hero {
+      padding: 60px;
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: rgba(168,85,247,0.15);
+      border-radius: 50%;
+      top: -100px;
+      right: -100px;
+      filter: blur(50px);
+    }
+
+    .tag {
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 12px;
+      color: #d6bcfa;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 5rem;
+      line-height: 1;
+      font-weight: 700;
+      margin-bottom: 25px;
+      background: linear-gradient(to right, #ffffff, #c4b5fd, #7dd3fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 700px;
+      font-size: 1.05rem;
+    }
+
+    .contact-card {
+      min-width: 300px;
+      padding: 30px;
+      height: fit-content;
+    }
+
+    .contact-card h2 {
+      margin-bottom: 25px;
+      color: #ddd6fe;
+    }
+
+    .contact-item {
+      margin-bottom: 22px;
+    }
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #7c859d;
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+    }
+
+    .section {
+      padding: 35px;
+      margin-bottom: 30px;
+      transition: 0.4s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--glow);
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin-bottom: 28px;
+    }
+
+    .text {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .timeline-item {
+      border-left: 1px solid rgba(168,85,247,0.5);
+      padding-left: 24px;
+      margin-bottom: 35px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      background: var(--violet);
+      border-radius: 50%;
+      position: absolute;
+      left: -7px;
+      top: 6px;
+      box-shadow: 0 0 20px rgba(168,85,247,0.7);
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 10px;
+      color: #ddd6fe;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .mini-card {
+      padding: 25px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: 0.4s ease;
+    }
+
+    .mini-card:hover {
+      transform: scale(1.03);
+      border-color: rgba(168,85,247,0.6);
+      box-shadow: var(--glow);
+    }
+
+    .mini-card span {
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #c4b5fd;
+    }
+
+    .mini-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #e2e8f0;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .skill:hover {
+      background: rgba(168,85,247,0.2);
+      transform: translateY(-2px);
+    }
+
+    .interest {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: #dbe4f5;
+    }
+
+    .interest:last-child {
+      border-bottom: none;
+    }
+
+    .number {
+      color: #a5b4fc;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #7c859d;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        flex-direction: column;
+        padding: 40px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      .hero,
+      .section {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <section class="hero glass fade-in">
+      <div>
+        <div class="tag">Future Business & AI Professional</div>
+
+        <h1>Jia Sharma</h1>
+
+        <p>
+          Curious, ambitious, and innovation-driven student passionate about AI product management,
+          startups, branding, and modern business ecosystems. Interested in combining creativity,
+          technology, and entrepreneurship to build impactful ideas.
+        </p>
+      </div>
+
+      <div class="contact-card glass">
+        <h2>Contact</h2>
+
+        <div class="contact-item">
+          <div class="label">Location</div>
+          <div>Delhi, India</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div>jsisback123@gmail.com</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">LinkedIn</div>
+          <a href="https://www.linkedin.com/in/jia-sharma-6b9b71358" target="_blank">
+            linkedin.com/in/jia-sharma-6b9b71358
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <div>
+        <section class="section glass fade-in">
+          <h2 class="section-title">About Me</h2>
+
+          <p class="text">
+            I am deeply interested in business innovation, AI-driven products, startups,
+            and branding. I enjoy exploring how technology shapes industries and consumer experiences.
+            My interests range from entrepreneurship and product strategy to design aesthetics,
+            digital storytelling, and modern business trends.
+          </p>
+        </section>
+
+        <section class="section glass fade-in">
+          <h2 class="section-title">Interests & Exploration</h2>
+
+          <div class="timeline-item">
+            <h3>AI Product Management</h3>
+            <p class="text">
+              Exploring the intersection of AI, consumer products, and business strategy
+              with a strong interest in innovation-led ecosystems.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Entrepreneurship & Startups</h3>
+            <p class="text">
+              Passionate about startup culture, business trends, branding,
+              and learning through real-world innovation.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Design & Aesthetics</h3>
+            <p class="text">
+              Interested in visual storytelling, digital aesthetics,
+              fashion inspiration, and modern branding experiences.
+            </p>
+          </div>
+        </section>
+
+        <section class="section glass fade-in">
+          <h2 class="section-title">Future Projects</h2>
+
+          <div class="cards">
+            <div class="mini-card">
+              <span>Startup Idea</span>
+              <h3>AI + Consumer Experience</h3>
+              <p class="text">
+                Interested in developing technology-driven ideas that combine creativity,
+                personalization, and user-focused design.
+              </p>
+            </div>
+
+            <div class="mini-card">
+              <span>Research Interest</span>
+              <h3>Airline & Business Models</h3>
+              <p class="text">
+                Curious about aviation expansion, international business growth,
+                and evolving market strategies.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section class="section glass fade-in">
+          <h2 class="section-title">Skills</h2>
+
+          <div class="skills">
+            <div class="skill">Communication</div>
+            <div class="skill">Creative Thinking</div>
+            <div class="skill">Research</div>
+            <div class="skill">Leadership</div>
+            <div class="skill">Brand Awareness</div>
+            <div class="skill">Presentation Skills</div>
+            <div class="skill">Adaptability</div>
+            <div class="skill">AI Curiosity</div>
+            <div class="skill">Collaboration</div>
+          </div>
+        </section>
+
+        <section class="section glass fade-in">
+          <h2 class="section-title">Education</h2>
+
+          <div class="timeline-item">
+            <h3>High School Student</h3>
+            <p class="text">Delhi, India</p>
+          </div>
+
+          <p class="text">
+            Focused on exploring business, entrepreneurship,
+            technology, and innovation-driven career paths.
+          </p>
+        </section>
+
+        <section class="section glass fade-in">
+          <h2 class="section-title">Core Interests</h2>
+
+          <div class="interest">
+            <span>AI & Technology</span>
+            <span class="number">01</span>
+          </div>
+
+          <div class="interest">
+            <span>Startups</span>
+            <span class="number">02</span>
+          </div>
+
+          <div class="interest">
+            <span>Branding</span>
+            <span class="number">03</span>
+          </div>
+
+          <div class="interest">
+            <span>Fashion & Aesthetics</span>
+            <span class="number">04</span>
+          </div>
+
+          <div class="interest">
+            <span>Business Innovation</span>
+            <span class="number">05</span>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      Designed with a futuristic luxury aesthetic • Jia Sharma Portfolio Resume
+    </footer>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0px)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach((el) => {
+      observer.observe(el);
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      document.body.style.backgroundPosition = `${x * 20}px ${y * 20}px`;
+    });
+  </script>
+</body>
+</html>
