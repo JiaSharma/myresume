@@ -1,0 +1,99 @@
+export default function FuturisticResume() {
+          </div>
+
+          {/* Right Column */}
+          <div className="space-y-8">
+            {/* Skills */}
+            <section className="border border-white/10 bg-white/5 rounded-3xl p-8 backdrop-blur-xl">
+              <h2 className="text-2xl font-bold mb-6">Skills</h2>
+
+              <div className="flex flex-wrap gap-3">
+                {[
+                  'Communication',
+                  'Creative Thinking',
+                  'Presentation Skills',
+                  'Research',
+                  'Brand Awareness',
+                  'Leadership',
+                  'Adaptability',
+                  'AI Curiosity',
+                  'Collaboration',
+                ].map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm text-zinc-200 hover:bg-violet-500/20 transition"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </section>
+
+            {/* Education */}
+            <section className="border border-white/10 bg-white/5 rounded-3xl p-8 backdrop-blur-xl">
+              <h2 className="text-2xl font-bold mb-6">Education</h2>
+
+              <div className="space-y-5">
+                <div>
+                  <p className="text-violet-300 text-sm uppercase tracking-widest mb-2">
+                    Current
+                  </p>
+                  <h3 className="text-lg font-semibold">
+                    High School Student
+                  </h3>
+                  <p className="text-zinc-400 text-sm mt-1">
+                    Delhi, India
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-zinc-400 text-sm leading-relaxed">
+                    Focused on exploring business, entrepreneurship, technology,
+                    and innovation-driven career paths.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Interests */}
+            <section className="border border-white/10 bg-white/5 rounded-3xl p-8 backdrop-blur-xl">
+              <h2 className="text-2xl font-bold mb-6">Core Interests</h2>
+
+              <div className="space-y-4 text-zinc-300">
+                <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                  <span>AI & Technology</span>
+                  <span className="text-violet-300">01</span>
+                </div>
+
+                <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                  <span>Startups</span>
+                  <span className="text-blue-300">02</span>
+                </div>
+
+                <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                  <span>Branding</span>
+                  <span className="text-cyan-300">03</span>
+                </div>
+
+                <div className="flex items-center justify-between border-b border-white/5 pb-3">
+                  <span>Fashion & Aesthetics</span>
+                  <span className="text-pink-300">04</span>
+                </div>
+
+                <div className="flex items-center justify-between pb-1">
+                  <span>Business Innovation</span>
+                  <span className="text-emerald-300">05</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-12 text-center text-zinc-500 text-sm tracking-wide">
+          Designed with a futuristic minimal aesthetic • Jia Sharma Portfolio Resume
+        </footer>
+      </main>
+    </div>
+  )
+}
