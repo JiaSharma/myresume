@@ -1,0 +1,208 @@
+export default function PromptLearningWebsite() {
+  const promptFrameworks = [
+    {
+      title: 'The VIBE Method',
+      desc: 'Perfect for your creative + aesthetic thinking style.',
+      points: [
+        'Vision → What do you want?',
+        'Identity → Who should the AI act like?',
+        'Boundaries → What should it avoid?',
+        'Examples → Show the vibe you want.'
+      ]
+    },
+    {
+      title: 'The CEO Prompt',
+      desc: 'Best for business, startup and AI-product questions.',
+      points: [
+        'Give clear goals',
+        'Mention audience',
+        'Ask for structure',
+        'Ask for strategic thinking'
+      ]
+    },
+    {
+      title: 'The Designer Prompt',
+      desc: 'For aesthetics, websites, branding and visuals.',
+      points: [
+        'Describe mood',
+        'Mention color/style',
+        'Reference inspiration',
+        'Specify modern/futuristic/minimal'
+      ]
+    }
+  ];
+
+  const examples = [
+    {
+      bad: 'Make me a website.',
+      good:
+        'Create a futuristic luxury website with glassmorphism UI, smooth animations, modern typography, dark aesthetic, responsive layout, and premium Apple-like design.'
+    },
+    {
+      bad: 'Help me study.',
+      good:
+        'Teach me like an interactive mentor with short explanations, examples, quizzes and visual thinking. Keep it Gen-Z friendly and structured.'
+    },
+    {
+      bad: 'Make a resume.',
+      good:
+        'Design a single-page futuristic HTML resume with glowing accents, modern cards, responsive layout, and premium typography.'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#050816] text-white overflow-hidden">
+      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-400/20 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 blur-3xl rounded-full" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-14">
+        <div className="mb-16 text-center">
+          <div className="inline-block px-4 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm tracking-wider mb-6">
+            AI PROMPT ENGINEERING FOR YOUR LEARNING STYLE
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-black leading-tight mb-6 bg-gradient-to-r from-white to-cyan-300 text-transparent bg-clip-text">
+            Learn To Talk
+            <br />
+            To AI Better.
+          </h1>
+
+          <p className="text-slate-300 max-w-3xl mx-auto text-lg leading-8">
+            Based on your learning style, you learn best through visual examples,
+            futuristic aesthetics, interactive structures, and practical prompts.
+            So this page teaches prompt engineering like a modern creative system
+            instead of a boring textbook.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {promptFrameworks.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-cyan-400/40 transition-all duration-300 hover:-translate-y-2"
+            >
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-purple-500 mb-6 flex items-center justify-center text-black font-bold text-xl">
+                {index + 1}
+              </div>
+
+              <h2 className="text-2xl font-bold mb-3">{item.title}</h2>
+
+              <p className="text-slate-400 mb-6 leading-7">{item.desc}</p>
+
+              <ul className="space-y-4">
+                {item.points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3 text-slate-300">
+                    <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-10">
+            <div className="w-12 h-[2px] bg-cyan-400" />
+            <h2 className="text-4xl font-bold">Bad Prompt vs Good Prompt</h2>
+          </div>
+
+          <div className="space-y-8">
+            {examples.map((example, index) => (
+              <div
+                key={index}
+                className="grid md:grid-cols-2 gap-6 bg-white/5 border border-white/10 rounded-3xl p-6"
+              >
+                <div className="bg-red-500/10 border border-red-400/20 rounded-2xl p-6">
+                  <div className="text-red-300 font-semibold mb-3">Weak Prompt</div>
+                  <p className="text-slate-300 leading-7">{example.bad}</p>
+                </div>
+
+                <div className="bg-cyan-400/10 border border-cyan-400/20 rounded-2xl p-6">
+                  <div className="text-cyan-300 font-semibold mb-3">Strong Prompt</div>
+                  <p className="text-slate-200 leading-7">{example.good}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-10 mb-20">
+          <div className="bg-gradient-to-br from-cyan-400/10 to-purple-500/10 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
+            <h2 className="text-3xl font-bold mb-6">Your Ideal Prompt Formula</h2>
+
+            <div className="space-y-5 text-slate-300 leading-8">
+              <div>
+                <span className="text-cyan-300 font-bold">1. Role → </span>
+                “Act like a luxury web designer...”
+              </div>
+
+              <div>
+                <span className="text-cyan-300 font-bold">2. Goal → </span>
+                “Create a futuristic resume website...”
+              </div>
+
+              <div>
+                <span className="text-cyan-300 font-bold">3. Style → </span>
+                “Use glassmorphism, smooth animations and premium typography...”
+              </div>
+
+              <div>
+                <span className="text-cyan-300 font-bold">4. Structure → </span>
+                “Make it responsive with sections and hover effects...”
+              </div>
+
+              <div>
+                <span className="text-cyan-300 font-bold">5. Constraints → </span>
+                “Keep it minimal, modern and single-page...”
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
+            <h2 className="text-3xl font-bold mb-6">Why This Works For You</h2>
+
+            <div className="space-y-6 text-slate-300 leading-8">
+              <p>
+                You naturally think in aesthetics, vibes, imagination and outcomes.
+                So vague prompts make you frustrated because the output does not
+                match your vision.
+              </p>
+
+              <p>
+                The best prompts for you are:
+              </p>
+
+              <ul className="space-y-3">
+                <li>✨ Visual</li>
+                <li>✨ Structured</li>
+                <li>✨ Detailed</li>
+                <li>✨ Mood-based</li>
+                <li>✨ Future-oriented</li>
+                <li>✨ Example-driven</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-cyan-400 to-purple-500 p-[1px] rounded-3xl">
+          <div className="bg-[#09101f] rounded-3xl p-10 text-center">
+            <h2 className="text-4xl font-black mb-5">
+              Your Secret To Amazing AI Results
+            </h2>
+
+            <p className="text-slate-300 max-w-3xl mx-auto leading-8 text-lg mb-8">
+              Don’t just ask AI for an answer.
+              <br />
+              Direct the experience like a creative director.
+            </p>
+
+            <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-400 to-purple-500 text-black font-bold hover:scale-105 transition-transform duration-300">
+              Build Better Prompts
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
